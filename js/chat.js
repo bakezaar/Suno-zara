@@ -11,7 +11,6 @@ document.addEventListener(
     }
 );
 
-
 function setupChat() {
 
     const form =
