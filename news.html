@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Suno Zara News — GCU, Lahore, Pakistan, World and Culture."
+    >
+
+    <meta
+        name="theme-color"
+        content="#101A2B"
+    >
+
+    <title>News — Suno Zara</title>
+
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="images/logo.jpeg"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="images/logo.jpeg"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a
+            href="index.html"
+            class="brand"
+            aria-label="Suno Zara Home"
+        >
+            <img
+                src="images/logo.jpeg"
+                alt="Suno Zara logo"
+                class="brand-logo"
+            >
+        </a>
+
+        <button
+            class="mobile-menu-button"
+            id="mobileMenuButton"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav
+            class="main-navigation"
+            id="mainNavigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="index.html" class="nav-link">
+                Home
+            </a>
+
+            <a href="programs.html" class="nav-link">
+                Programs
+            </a>
+
+            <a
+                href="news.html"
+                class="nav-link active"
+            >
+                News
+            </a>
+
+            <a href="about.html" class="nav-link">
+                About
+            </a>
+
+            <a
+                href="index.html#live"
+                class="listen-button"
+            >
+                <span class="listen-dot"></span>
+                Listen Live
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="page-hero news-page-hero">
+
+        <div class="section-container">
+
+            <div class="eyebrow">
+                SUNO ZARA NEWSROOM
+            </div>
+
+            <h1>
+                News.
+            </h1>
+
+            <p>
+                From GCU to Lahore and beyond — stories that matter,
+                explained without unnecessary noise.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="news-section">
+
+        <div class="section-container">
+
+            <div
+                class="category-filter"
+                role="tablist"
+                aria-label="News categories"
+            >
+
+                <button
+                    class="category-button active"
+                    type="button"
+                    data-category="all"
+                >
+                    All
+                </button>
+
+                <button
+                    class="category-button"
+                    type="button"
+                    data-category="GCU"
+                >
+                    GCU
+                </button>
+
+                <button
+                    class="category-button"
+                    type="button"
+                    data-category="Lahore"
+                >
+                    Lahore
+                </button>
+
+                <button
+                    class="category-button"
+                    type="button"
+                    data-category="Pakistan"
+                >
+                    Pakistan
+                </button>
+
+                <button
+                    class="category-button"
+                    type="button"
+                    data-category="World"
+                >
+                    World
+                </button>
+
+                <button
+                    class="category-button"
+                    type="button"
+                    data-category="Culture"
+                >
+                    Culture
+                </button>
+
+            </div>
+
+
+            <div
+                class="news-grid"
+                id="newsGrid"
+            >
+
+                <!-- News cards are rendered by script.js -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <img
+                src="images/logo.jpeg"
+                alt="Suno Zara"
+            >
+
+            <p>
+                Awaazon Ke Darmiyan.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <div>
+
+                <span class="footer-heading">
+                    Explore
+                </span>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="programs.html">
+                    Programs
+                </a>
+
+                <a href="news.html">
+                    News
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </div>
+
+            <div>
+
+                <span class="footer-heading">
+                    Suno Zara
+                </span>
+
+                <span>
+                    Student Web Radio
+                </span>
+
+                <span>
+                    GCU Lahore
+                </span>
+
+                <span>
+                    Awaazon Ke Darmiyan
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            © <span id="currentYear"></span> Suno Zara
+        </span>
+
+        <span>
+            Broadcast Journalism Project
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="js/config.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
