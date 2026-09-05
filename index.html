@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Suno Zara — Awaazon Ke Darmiyan. A student-focused live web radio bringing campus stories, conversations, culture, music and news together."
+    >
+
+    <meta
+        name="theme-color"
+        content="#101A2B"
+    >
+
+    <title>Suno Zara — Awaazon Ke Darmiyan</title>
+
+    <link
+        rel="icon"
+        type="image/jpeg"
+        href="images/logo.jpeg"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="images/logo.jpeg"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="Suno Zara Home"
+            >
+                <img
+                    src="images/logo.jpeg"
+                    alt="Suno Zara logo"
+                    class="brand-logo"
+                >
+            </a>
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav
+                class="main-navigation"
+                id="mainNavigation"
+                aria-label="Main navigation"
+            >
+                <a
+                    href="index.html"
+                    class="nav-link active"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="programs.html"
+                    class="nav-link"
+                >
+                    Programs
+                </a>
+
+                <a
+                    href="news.html"
+                    class="nav-link"
+                >
+                    News
+                </a>
+
+                <a
+                    href="about.html"
+                    class="nav-link"
+                >
+                    About
+                </a>
+
+                <a
+                    href="#live"
+                    class="listen-button"
+                >
+                    <span class="listen-dot"></span>
+                    Listen Live
+                </a>
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-inner">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        STUDENT WEB RADIO
+                    </div>
+
+                    <h1>
+                        Awaazon Ke
+                        <span>Darmiyan.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        In the noise of everyday life, there are always
+                        stories worth listening to. Suno Zara brings those
+                        voices closer.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#live"
+                            class="primary-button"
+                        >
+                            <span class="button-live-dot"></span>
+                            Listen Live
+                        </a>
+
+                        <a
+                            href="programs.html"
+                            class="secondary-button"
+                        >
+                            Explore Programs
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="frequency-orbit">
+
+                        <div class="orbit orbit-one"></div>
+                        <div class="orbit orbit-two"></div>
+                        <div class="orbit orbit-three"></div>
+
+                        <div class="frequency-center">
+
+                            <span class="frequency-label">
+                                SUNO
+                            </span>
+
+                            <div class="frequency-bars hero-bars">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span class="frequency-label">
+                                ZARA
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LIVE SECTION ================= -->
+
+        <section
+            class="live-section"
+            id="live"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading live-heading">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            <span class="live-dot"></span>
+                            ON AIR NOW
+                        </div>
+
+                        <h2>
+                            You're listening to
+                            <span>Suno Zara.</span>
+                        </h2>
+
+                    </div>
+
+                    <div
+                        class="live-status"
+                        id="liveStatus"
+                    >
+                        <span class="status-dot"></span>
+                        <span id="liveStatusText">
+                            Ready to listen
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="live-grid">
+
+                    <!-- PLAYER -->
+
+                    <div class="player-card">
+
+                        <div class="player-top">
+
+                            <div class="station-mark">
+                                SZ
+                            </div>
+
+                            <div class="player-info">
+
+                                <span class="player-kicker">
+                                    LIVE BROADCAST
+                                </span>
+
+                                <h3 id="currentProgram">
+                                    Suno Zara Live
+                                </h3>
+
+                                <p id="currentPresenter">
+                                    Live from the station
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- WAVEFORM -->
+
+                        <div
+                            class="waveform-container"
+                            id="waveformContainer"
+                            aria-label="Live audio visualizer"
+                        >
+
+                            <div class="waveform" id="waveform">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="player-controls">
+
+                            <button
+                                class="play-button"
+                                id="livePlayButton"
+                                type="button"
+                                aria-label="Play live radio"
+                            >
+                                <span
+                                    class="play-icon"
+                                    id="playIcon"
+                                >
+                                    ▶
+                                </span>
+                            </button>
+
+                            <div class="player-control-text">
+
+                                <span>
+                                    SUNO ZARA
+                                </span>
+
+                                <strong id="playerState">
+                                    Press play to listen
+                                </strong>
+
+                            </div>
+
+                            <div class="volume-wrapper">
+
+                                <span class="volume-symbol">
+                                    ◖
+                                </span>
+
+                                <input
+                                    type="range"
+                                    id="volumeControl"
+                                    min="0"
+                                    max="1"
+                                    step="0.01"
+                                    value="0.85"
+                                    aria-label="Volume"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <audio
+                            id="liveAudio"
+                            preload="none"
+                            crossorigin="anonymous"
+                        ></audio>
+
+                    </div>
+
+
+                    <!-- CHAT -->
+
+                    <aside class="chat-card">
+
+                        <div class="chat-header">
+
+                            <div>
+
+                                <span class="chat-kicker">
+                                    LISTENER CHAT
+                                </span>
+
+                                <h3>
+                                    Say something.
+                                </h3>
+
+                            </div>
+
+                            <span class="anonymous-badge">
+                                Anonymous
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="chat-messages"
+                            id="chatMessages"
+                            aria-live="polite"
+                        >
+
+                            <div class="chat-welcome">
+
+                                <div class="chat-welcome-mark">
+                                    SZ
+                                </div>
+
+                                <p>
+                                    You're listening to Suno Zara.
+                                    Leave a thought, question or message.
+                                </p>
+
+                                <span>
+                                    No username required.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <form
+                            class="chat-form"
+                            id="chatForm"
+                        >
+
+                            <label
+                                for="chatInput"
+                                class="sr-only"
+                            >
+                                Write a message
+                            </label>
+
+                            <input
+                                type="text"
+                                id="chatInput"
+                                maxlength="250"
+                                placeholder="What's on your mind?"
+                                autocomplete="off"
+                            >
+
+                            <button
+                                type="submit"
+                                aria-label="Send message"
+                            >
+                                →
+                            </button>
+
+                        </form>
+
+                        <div
+                            class="chat-notice"
+                            id="chatNotice"
+                        >
+                            Be respectful. Your message is anonymous.
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="intro-section">
+
+            <div class="section-container intro-grid">
+
+                <div class="intro-number">
+                    01
+                </div>
+
+                <div class="intro-content">
+
+                    <div class="eyebrow">
+                        WHY SUNO ZARA
+                    </div>
+
+                    <h2>
+                        There's always
+                        <em>something</em>
+                        worth hearing.
+                    </h2>
+
+                    <p>
+                        University life is loud. Classes, conversations,
+                        notifications, deadlines, traffic, music and
+                        everything happening around us compete for attention.
+                    </p>
+
+                    <p>
+                        Suno Zara slows that noise down for a moment.
+                        We listen to the stories people often walk past —
+                        from campus conversations and student concerns to
+                        culture, interviews, music and the bigger stories
+                        shaping our world.
+                    </p>
+
+                    <a
+                        href="about.html"
+                        class="text-link"
+                    >
+                        More about Suno Zara
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK LINKS ================= -->
+
+        <section class="quick-section">
+
+            <div class="section-container">
+
+                <div class="quick-grid">
+
+                    <a
+                        href="programs.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Programs
+                        </h3>
+
+                        <p>
+                            Conversations, stories and voices worth tuning into.
+                        </p>
+
+                        <span class="quick-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="news.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-number">
+                            02
+                        </span>
+
+                        <h3>
+                            News
+                        </h3>
+
+                        <p>
+                            What's happening around GCU, Lahore and beyond.
+                        </p>
+
+                        <span class="quick-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="about.html"
+                        class="quick-card"
+                    >
+
+                        <span class="quick-number">
+                            03
+                        </span>
+
+                        <h3>
+                            About
+                        </h3>
+
+                        <p>
+                            The idea, the voice and the reason behind Suno Zara.
+                        </p>
+
+                        <span class="quick-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <img
+                    src="images/logo.jpeg"
+                    alt="Suno Zara"
+                >
+
+                <p>
+                    Awaazon Ke Darmiyan.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+
+                    <span class="footer-heading">
+                        Explore
+                    </span>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="programs.html">
+                        Programs
+                    </a>
+
+                    <a href="news.html">
+                        News
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <span class="footer-heading">
+                        Suno Zara
+                    </span>
+
+                    <span>
+                        Student Web Radio
+                    </span>
+
+                    <span>
+                        GCU Lahore
+                    </span>
+
+                    <span>
+                        Awaazon Ke Darmiyan
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="currentYear"></span> Suno Zara
+            </span>
+
+            <span>
+                Broadcast Journalism Project
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/chat.js"></script>
+
+</body>
+</html>
