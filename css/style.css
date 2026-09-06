@@ -18,7 +18,7 @@
     --dark-text: #182131;
     --muted-text: #657080;
 
-    --border: rgba(16, 26, 43, 0.14);
+    --border: rgbcarda(16, 26, 43, 0.14);
     --light-border: rgba(244, 240, 231, 0.18);
 
     --max-width: 1200px;
@@ -1060,106 +1060,79 @@ a {
 /* ================= CHAT ================= */
 
 .chat-card {
-    min-height: 430px;
-
+    height: 430px;
+    min-height: 0;
     background: var(--cream);
     color: var(--navy);
-
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .chat-header {
     padding: 27px 27px 21px;
-
     display: flex;
     justify-content: space-between;
     gap: 15px;
-
-    border-bottom:
-        1px solid
-        var(--border);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
 .chat-header h3 {
-    font-family:
-        "Playfair Display",
-        serif;
-
+    font-family: "Playfair Display", serif;
     font-size: 1.8rem;
     font-weight: 600;
 }
 
 .anonymous-badge {
     align-self: flex-start;
-
-    padding:
-        5px
-        8px;
-
-    border:
-        1px solid
-        var(--border);
-
+    padding: 5px 8px;
+    border: 1px solid var(--border);
     color: var(--muted-text);
-
     font-size: 0.62rem;
     font-weight: 700;
 }
 
 .chat-messages {
     flex: 1;
-
-    min-height: 240px;
-
+    min-height: 0;
     padding: 22px;
-
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .chat-welcome {
     min-height: 190px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     color: var(--muted-text);
 }
 
 .chat-welcome-mark {
     width: 44px;
     height: 44px;
-
     margin-bottom: 13px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     background: var(--navy);
     color: var(--cream);
-
     font-size: 0.7rem;
     font-weight: 700;
 }
 
 .chat-welcome p {
     max-width: 250px;
-
     font-size: 0.82rem;
 }
 
 .chat-welcome span {
     margin-top: 8px;
-
     font-size: 0.7rem;
-
     color: var(--grey);
 }
 
@@ -1169,57 +1142,36 @@ a {
 
 .chat-message-bubble {
     display: inline-block;
-
     max-width: 90%;
-
-    padding:
-        10px
-        13px;
-
-    background:
-        rgba(102, 123, 145, 0.12);
-
+    padding: 10px 13px;
+    background: rgba(102, 123, 145, 0.12);
     color: var(--navy);
-
     font-size: 0.82rem;
-
     overflow-wrap: anywhere;
 }
 
 .chat-message-time {
     display: block;
-
     margin-top: 4px;
-
     color: var(--grey);
-
     font-size: 0.62rem;
 }
 
 .chat-form {
     display: flex;
-
     margin: 0 15px 8px;
-
-    border:
-        1px solid
-        var(--border);
+    border: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
 .chat-form input {
     min-width: 0;
     flex: 1;
-
-    padding:
-        13px;
-
+    padding: 13px;
     border: 0;
     outline: 0;
-
     background: transparent;
-
     color: var(--navy);
-
     font-size: 0.8rem;
 }
 
@@ -1229,12 +1181,9 @@ a {
 
 .chat-form button {
     width: 45px;
-
     border: 0;
-
     background: var(--navy);
     color: var(--cream);
-
     font-size: 1.1rem;
 }
 
@@ -1243,16 +1192,11 @@ a {
 }
 
 .chat-notice {
-    padding:
-        0
-        15px
-        15px;
-
+    padding: 0 15px 15px;
     color: var(--grey);
-
     font-size: 0.61rem;
+    flex-shrink: 0;
 }
-
 
 /* ================= INTRO ================= */
 
@@ -2730,8 +2674,9 @@ a {
     }
 
     .chat-card {
-        min-height: 400px;
-    }
+    height: 400px;
+    min-height: 0;
+}
 
     .intro-section,
     .about-section {
