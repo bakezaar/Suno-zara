@@ -2542,9 +2542,12 @@ a {
         right: 0;
         bottom: 0;
 
+       height: calc(100vh - 72px);
         padding: 35px 25px;
 
         background: var(--cream);
+
+       z-index: 9999;
 
         flex-direction: column;
         align-items: flex-start;
