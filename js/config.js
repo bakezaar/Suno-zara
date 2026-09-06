@@ -20,7 +20,7 @@ window.SUNO_ZARA_CONFIG = {
      * GitHub Pages HTTPS. The stream should preferably use HTTPS.
      */
 
-    streamUrl: "",
+    streamUrl: "https://excessive-colour-dodge-direct.trycloudflare.com/listen/suno-zara/radio.mp3",
 
 
     /*
