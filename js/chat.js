@@ -1,6 +1,42 @@
 /* =========================================================
-   SUNO ZARA CHAT INTERFACE
+   SUNO ZARA — REAL-TIME LISTENER CHAT
    ========================================================= */
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    push,
+    onChildAdded
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+
+
+/* ================= FIREBASE CONFIG ================= */
+
+const firebaseConfig = {
+    apiKey: "AIzaSyADC5adJBMeiBwfFRpTarl8XbT-Qvyi0fU",
+    authDomain: "suno-zara-b2905.firebaseapp.com",
+    projectId: "suno-zara-b2905",
+    storageBucket: "suno-zara-b2905.firebasestorage.app",
+    messagingSenderId: "551715171225",
+    appId: "1:551715171225:web:769e61f393eb06e28e8108",
+    measurementId: "G-T8N3HPNLS4"
+};
+
+
+/* ================= INITIALIZE FIREBASE ================= */
+
+const app =
+    initializeApp(firebaseConfig);
+
+const database =
+    getDatabase(app);
+
+
+/* ================= CHAT SETUP ================= */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -10,6 +46,7 @@ document.addEventListener(
 
     }
 );
+
 
 function setupChat() {
 
@@ -45,16 +82,51 @@ function setupChat() {
 
     const MAX_LENGTH = 250;
 
-    const COOLDOWN =
-        3000;
+    const COOLDOWN = 3000;
 
-    let lastMessageTime =
-        0;
+    let lastMessageTime = 0;
 
+
+    /* ================= RECEIVE MESSAGES ================= */
+
+    const chatRef =
+        ref(
+            database,
+            "chat"
+        );
+
+
+    onChildAdded(
+        chatRef,
+        snapshot => {
+
+            const data =
+                snapshot.val();
+
+
+            if (
+                !data ||
+                !data.message
+            ) {
+                return;
+            }
+
+
+            addChatMessage(
+                data.message,
+                data.sender || "Anonymous",
+                data.timestamp
+            );
+
+        }
+    );
+
+
+    /* ================= SEND MESSAGE ================= */
 
     form.addEventListener(
         "submit",
-        event => {
+        async event => {
 
             event.preventDefault();
 
@@ -116,34 +188,47 @@ function setupChat() {
                 now;
 
 
-            addChatMessage(
-                message,
-                "You"
-            );
+            try {
+
+                await push(
+                    chatRef,
+                    {
+                        message: message,
+                        sender: "Anonymous",
+                        timestamp: now
+                    }
+                );
 
 
-            input.value =
-                "";
+                input.value = "";
 
+                showNotice(
+                    "Message sent."
+                );
 
-            showNotice(
-                "Message sent."
-            );
+            } catch (error) {
 
+                console.error(
+                    "Chat error:",
+                    error
+                );
 
-            /*
-             * Part B will send this same message to the
-             * real-time backend so other listeners and the
-             * presenter can see it.
-             */
+                showNotice(
+                    "Couldn't send your message. Please try again."
+                );
+
+            }
 
         }
     );
 
 
+    /* ================= DISPLAY MESSAGE ================= */
+
     function addChatMessage(
         message,
-        sender
+        sender,
+        timestamp
     ) {
 
         const welcome =
@@ -173,9 +258,11 @@ function setupChat() {
         bubble.className =
             "chat-message-bubble";
 
+
         /*
-         * textContent is deliberately used instead of
-         * innerHTML so user messages cannot inject HTML.
+         * textContent is deliberately used.
+         * This prevents users from injecting HTML
+         * or JavaScript into the chat.
          */
 
         bubble.textContent =
@@ -190,8 +277,21 @@ function setupChat() {
         time.className =
             "chat-message-time";
 
+
+        const messageTime =
+            timestamp
+                ? new Date(timestamp)
+                : new Date();
+
+
         time.textContent =
-            `${sender} · ${getCurrentTime()}`;
+            `${sender} · ${messageTime.toLocaleTimeString(
+                [],
+                {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                }
+            )}`;
 
 
         wrapper.appendChild(
@@ -214,6 +314,8 @@ function setupChat() {
     }
 
 
+    /* ================= NOTICE ================= */
+
     function showNotice(
         message
     ) {
@@ -224,20 +326,6 @@ function setupChat() {
 
         notice.textContent =
             message;
-
-    }
-
-
-    function getCurrentTime() {
-
-        return new Date()
-            .toLocaleTimeString(
-                [],
-                {
-                    hour: "2-digit",
-                    minute: "2-digit"
-                }
-            );
 
     }
 
