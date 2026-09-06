@@ -2545,8 +2545,6 @@ a {
         padding: 35px 25px;
 
         background: var(--cream);
-       
-       z-index: 1000;
 
         flex-direction: column;
         align-items: flex-start;
